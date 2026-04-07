@@ -1,10 +1,13 @@
-package com.example.student;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+package com.example.student.controller;
+import org.springframework.web.bind.annotation.*;
+import java.util.Arrays;
+import java.util.List;
 
-@SpringBootApplication
-public class StudentApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(StudentApplication.class, args);
+@RestController
+@RequestMapping("/api/students")
+public class StudentController {
+    @GetMapping
+    public List<String> getAllStudents() {
+        return Arrays.asList("Alice Johnson", "Bob Smith", "Charlie Brown");
     }
 }
